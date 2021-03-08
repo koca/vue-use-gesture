@@ -1,0 +1,49 @@
+{
+  "name": "docs",
+  "version": "0.0.0",
+  "private": "true",
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "serve": "vite preview"
+  },
+  "dependencies": {
+    "@vitejs/plugin-vue-jsx": "^1.1.2",
+    "@vueuse/core": "^4.1.1",
+    "@vueuse/head": "^0.3.1",
+    "classnames": "^2.2.6",
+    "markdown-it-container": "^3.0.0",
+    "markdown-it-footnote": "^3.0.2",
+    "shiki": "^0.9.2",
+    "shiki-languages": "^0.2.7",
+    "shiki-themes": "^0.2.7",
+    "shiki-twoslash": "^1.2.6",
+    "url-slug": "^3.0.1",
+    "vue": "^3.0.5",
+    "vue-router": "^4.0.4",
+    "vue-use-gesture": "^1.0.0"
+  },
+  "devDependencies": {
+    "@tailwindcss/typography": "^0.4.0",
+    "@types/deasync": "^0.1.1",
+    "@types/markdown-it": "^12.0.1",
+    "@vitejs/plugin-vue": "^1.1.4",
+    "@vitejs/plugin-vue-jsx": "^1.1.2",
+    "@vue/compiler-sfc": "^3.0.5",
+    "autoprefixer": "^10.2.4",
+    "deasync": "^0.1.21",
+    "markdown-it": "^12.0.0",
+    "markdown-it-anchor": "^7.0.2",
+    "multi-integer-range": "^4.0.8",
+    "postcss": "^8.2.6",
+    "postcss-nested": "^5.0.3",
+    "vite": "^2.0.2",
+    "vite-plugin-components": "^0.7.5",
+    "vite-plugin-markdown": "2.0.0",
+    "vite-plugin-pages": "^0.4.5",
+    "vite-plugin-windicss": "^0.4.3"
+  },
+  "resolutions": {
+    "postcss": "8.2.6"
+  }
+}

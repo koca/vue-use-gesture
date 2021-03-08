@@ -1,0 +1,64 @@
+{
+  "name": "vue-use-gesture",
+  "version": "1.0.0",
+  "author": {
+    "name": "Mesut Koca",
+    "email": "imesutkoca@gmail.com"
+  },
+  "homepage": "https://vue-use-gesture.netlify.app",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/koca/vue-use-gesture.git"
+  },
+  "bugs": {
+    "url": "https://github.com/koca/vue-use-gesture/issues"
+  },
+  "keywords": [
+    "vue",
+    "editor",
+    "code editor",
+    "prism"
+  ],
+  "description": "Vue hook for receiving gestures https://vue-use-gesture.netlify.app",
+  "main": "dist/index.js",
+  "typings": "dist/index.d.ts",
+  "files": [
+    "dist"
+  ],
+  "sideEffects": false,
+  "module": "dist/vueusegesture.esm.js",
+  "unpkg": "dist/vueusegesture.umd.production.min.js",
+  "umd:main": "dist/vueusegesture.umd.production.min.js",
+  "license": "MIT",
+  "scripts": {
+    "dev": "tsdx watch --format cjs,esm --name VueUseGesture",
+    "build": "tsdx build --format cjs,esm,umd --name VueUseGesture",
+    "test": "tsdx test",
+    "test:watch": "tsdx test --watchAll",
+    "test:cov": "tsdx test --collectCoverage",
+    "lint": "eslint src",
+    "lint:tsdx:not-working": "tsdx lint"
+  },
+  "devDependencies": {
+    "@testing-library/jest-dom": "^5.10.1",
+    "@testing-library/vue": "^5.0.4",
+    "@vue/cli-plugin-unit-jest": "^4.4.4",
+    "jest-environment-jsdom-sixteen": "^1.0.3",
+    "rollup-plugin-postcss": "^3.1.2",
+    "tsdx": "^0.13.2",
+    "typescript": "^3.9.3",
+    "vue-jest": "^3.0.5",
+    "@vue/composition-api": "1.0.0-rc.1",
+    "vue": "^3.0.5"
+  },
+  "peerDependencies": {
+    "@vue/composition-api": "1.0.0-rc.1",
+    "vue": "^2.0.0 || >=3.0.0-rc.0"
+  },
+  "dependencies": {
+    "vue-demi": "^0.6.0"
+  },
+  "engines": {
+    "node": ">=10"
+  }
+}

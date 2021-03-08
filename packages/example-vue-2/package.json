@@ -1,0 +1,29 @@
+{
+  "name": "example-vue-2",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "serve": "vue-cli-service serve",
+    "build": "vue-cli-service build"
+  },
+  "dependencies": {
+    "@vue/composition-api": "1.0.0-rc.1",
+    "core-js": "^3.6.4",
+    "lethargy": "^1.0.9",
+    "prismjs": "^1.20.0",
+    "tailwindcss": "^1.9.6",
+    "vue": "^2.6.12",
+    "vue-prism-editor": "^1.2.2",
+    "vue-use-gesture": "^1.0.0"
+  },
+  "devDependencies": {
+    "@vue/cli-plugin-babel": "~4.3.0",
+    "@vue/cli-service": "~4.5.11",
+    "vue-template-compiler": "^2.6.12"
+  },
+  "browserslist": [
+    "> 1%",
+    "last 2 versions",
+    "not dead"
+  ]
+}

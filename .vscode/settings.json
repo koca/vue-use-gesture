@@ -1,0 +1,13 @@
+{
+  "editor.codeActionsOnSave": {
+    "source.fixAll": true
+  },
+  "editor.formatOnSave": true,
+  "eslint.packageManager": "yarn",
+  "eslint.workingDirectories": [
+    "./vue-use-gesture"
+  ],
+  "volar.tsPlugin": true,
+  "typescript.tsdk": "node_modules/typescript/lib",
+  "volar.tsPluginStatus": false
+}

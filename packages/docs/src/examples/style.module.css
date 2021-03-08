@@ -1,0 +1,223 @@
+:root {
+  --bg-example: #86b4ff1a;
+  --bg-example-header: rgb(0, 18, 39);
+  --z-overlay: 41;
+  --z-example: 50;
+  --z-drag: 90;
+}
+
+.example {
+  background-color: var(--bg-example);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 3em;
+  border-radius: 4px;
+  margin-bottom: 1.8rem;
+  position: relative;
+  z-index: var(--z-example);
+}
+
+.easter {
+  display: inline-block;
+  position: relative;
+  cursor: grab;
+  touch-action: none;
+}
+
+.drag {
+  background: #91c9f9;
+  border-radius: 16px;
+  height: 80px;
+  width: 80px;
+  touch-action: none;
+  cursor: grab;
+  z-index: var(--z-drag);
+  position: relative;
+  user-select: none;
+}
+
+.overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: var(--z-overlay);
+  background: rgba(1, 22, 39, 0.5);
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 300ms ease;
+}
+
+.overlay.active {
+  opacity: 1;
+  pointer-events: auto;
+  transition-duration: 800ms;
+}
+
+.ui {
+  background: var(--bg-example-header);
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  border-radius: 4px 4px 0 0;
+  color: #fff;
+  padding: 0.5em 2em;
+  font-family: monospace;
+}
+
+.ui.horizontal {
+  display: flex;
+}
+
+.ui.horizontal > *:not(:first-child) {
+  margin-left: 1em;
+}
+
+.ui label {
+  display: flex;
+  align-items: center;
+}
+
+.ui label > input {
+  margin-right: 1em;
+}
+
+.cancelLimit {
+  position: absolute;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  background-color: hotpink;
+  width: calc(50% - 200px);
+  opacity: 0.5;
+  border-radius: 0 4px 4px 0;
+}
+
+.Swipe .square {
+  @apply border-2 border-gray-500;
+  position: absolute;
+  height: 80px;
+  width: 80px;
+  transform: scale(1.1);
+  opacity: 0.4;
+  transition: all 350ms ease;
+}
+
+.Swipe .square.active {
+  @apply bg bg-gray-500;
+  opacity: 0.6;
+}
+
+.scroll {
+  background: var(--bg-accent-primary);
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  border-radius: 4px;
+  opacity: 0.8;
+}
+
+.Threshold .drag > div {
+  height: 100%;
+  width: 100%;
+  border-radius: 16px;
+  background: #91c9f97a;
+}
+
+.Threshold .drag > div > div {
+  background: #fff;
+  padding: 0.4em;
+  position: absolute;
+  top: -10px;
+  right: -5px;
+  transform: translate(100%, 0);
+  font-family: monospace;
+  font-size: 0.7em;
+}
+
+.Bounds .drag,
+.Rubberband .drag {
+  position: absolute;
+}
+
+.limits {
+  height: 190px;
+  width: 258px;
+  border: 4px solid #fff;
+}
+
+.Initial .drag,
+.Axis .drag,
+.Axis2 .drag,
+.FilterTaps .drag,
+.Delay .drag {
+  margin-top: 20px;
+}
+
+.TouchAction {
+  flex-direction: column;
+  overflow: hidden;
+}
+
+.TouchAction .drag {
+  margin: 5px 0;
+  width: 100%;
+  border-radius: 4px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: white;
+  font-weight: bold;
+}
+
+.LethargyWheel {
+  overflow: hidden;
+  height: 400px;
+  align-items: flex-start;
+  justify-content: center;
+  padding: 30px 0 0 0;
+}
+
+.LethargyWheel > div {
+  width: 80%;
+  transition: transform 350ms ease-in-out;
+}
+
+.LethargyWheel > div > div {
+  border-radius: 4px;
+  font-size: 50px;
+  color: white;
+  min-height: 320px;
+  width: 100%;
+  background-color: royalblue;
+  margin: 10px 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+
+.PreventWindowScrollY,
+.Transform {
+  padding: 0;
+  height: 400px;
+  background: rgb(39, 39, 48);
+  overflow: hidden;
+  user-select: none;
+}
+
+.PreventWindowScrollY canvas {
+  touch-action: pan-y;
+}
+
+.Transform {
+  height: 300px;
+}
+
+.Transform canvas {
+  touch-action: none;
+}

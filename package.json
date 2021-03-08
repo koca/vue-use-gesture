@@ -1,0 +1,44 @@
+{
+  "name": "root",
+  "description": "vue use gesture",
+  "author": {
+    "name": "Mesut Koca",
+    "email": "imesutkoca@gmail.com"
+  },
+  "version": "0.0.0",
+  "private": true,
+  "workspaces": [
+    "packages/*"
+  ],
+  "husky": {
+    "hooks": {
+      "pre-commit": "eslint packages/ --fix"
+    }
+  },
+  "scripts": {
+    "bootstrap": "lerna bootstrap --use-workspaces",
+    "example-vue-2": "yarn workspace example-vue-2 serve",
+    "build:example": "yarn workspace example build",
+    "build": "yarn workspace vue-use-gesture build",
+    "dev": "yarn workspace vue-use-gesture dev",
+    "docs": "yarn workspace docs dev",
+    "docs:build": "yarn workspace docs build",
+    "lint": "eslint packages/ --fix",
+    "test": "yarn workspace vue-use-gesture test",
+    "test:watch": "yarn workspace vue-use-gesture test:watch",
+    "test:cov": "yarn workspace vue-use-gesture test:cov"
+  },
+  "devDependencies": {
+    "@changesets/cli": "^2.9.2",
+    "@typescript-eslint/eslint-plugin": "^4.15.1",
+    "@typescript-eslint/parser": "^4.15.1",
+    "babel-eslint": "^10.1.0",
+    "eslint": "^7.20.0",
+    "eslint-config-prettier": "^7.2.0",
+    "eslint-plugin-prettier": "^3.3.1",
+    "eslint-plugin-vue": "^7.7.0",
+    "husky": "^4.2.5",
+    "lerna": "^3.22.0",
+    "prettier": "^2.0.5"
+  }
+}

@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" href="https://use-gesture.netlify.app/favicon-32x32.png?v=a2ec2f9235e6aa90a4403808b4f24dab" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <!-- HTML Meta Tags -->
+    <title>Vue UseGesture</title>
+    <meta name="description" content="Vue UseGesture allows you to implement advanced UI interactions with just a few lines of code.">
+
+    <!-- Facebook Meta Tags -->
+    <meta property="og:url" content="https://vue-use-gesture.netlify.app">
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="Vue UseGesture">
+    <meta property="og:description" content="Vue UseGesture allows you to implement advanced UI interactions with just a few lines of code.">
+    <meta property="og:image" content="/opengraph.png">
+
+    <!-- Twitter Meta Tags -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta property="twitter:domain" content="vue-use-gesture.netlify.app">
+    <meta property="twitter:url" content="https://vue-use-gesture.netlify.app">
+    <meta name="twitter:title" content="Vue UseGesture">
+    <meta name="twitter:description" content="Vue UseGesture allows you to implement advanced UI interactions with just a few lines of code.">
+    <meta name="twitter:image" content="/opengraph.png">
+
+
+  </head>
+  <body>
+    <div id="app"></div>
+    <script>
+      (function() {
+        // const prefersDark = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches
+        // const setting = localStorage.getItem('color-schema') || 'auto'
+        // if (setting === 'dark' || (prefersDark && setting !== 'light'))
+          document.documentElement.classList.toggle('dark', true)
+      })()
+    </script>
+    <script type="module" src="/src/main.ts"></script>
+  </body>
+</html>
