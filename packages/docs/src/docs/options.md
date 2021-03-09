@@ -377,7 +377,7 @@ The component above can only move along the `x` axis. But try dragging and movin
 
 <code-view id="LockDirection"></code-view>
 
-```html {9-12}
+```html {9-14}
 <template>
   <div v-bind="bind()" :style="style" />
 </template>
