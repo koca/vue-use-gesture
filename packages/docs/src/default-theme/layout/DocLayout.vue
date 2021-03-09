@@ -5,8 +5,23 @@
     <AppHeader></AppHeader>
     <div class="mx-auto w-full max-w-7xl px-0 lg:px-4">
       <div class="lg:flex">
+        <button
+          @click="toggleMenu"
+          type="button"
+          class="fixed z-50 bottom-4 right-4 w-16 h-16 rounded-full bg-gray-700 text-white block lg:hidden"
+        >
+          <span class="sr-only">Open site navigation</span>
+          <!-- prettier-ignore -->
+          <svg width="24" height="24" fill="none" class="absolute top-1/2 left-1/2 -mt-3 -ml-3 transition duration-300 transform"><path d="M4 8h16M4 16h16" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path></svg>
+          <!-- prettier-ignore -->
+          <svg width="24" height="24" fill="none" class="absolute top-1/2 left-1/2 -mt-3 -ml-3 transition duration-300 transform opacity-0 scale-80"><path d="M6 18L18 6M6 6l12 12" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path></svg>
+        </button>
         <div
-          class="sidebar fixed z-40 inset-0 flex-none h-full w-full lg:static lg:h-auto lg:overflow-y-visible lg:pt-0 lg:w-64 lg:block hidden"
+          :class="
+            `sidebar fixed z-40 inset-0 flex-none h-full w-full lg:static lg:h-auto lg:overflow-y-visible lg:pt-0 lg:w-64 lg:block bg-gray-900 p-4 ${
+              isMenuVisible ? 'mt-8 lg:mt-0' : 'hidden'
+            }`
+          "
         >
           <AppSidebar></AppSidebar>
         </div>
@@ -35,7 +50,8 @@
 </template>
 
 <script>
-import { defineComponent } from 'vue'
+import { defineComponent, ref } from 'vue'
+import { useLockScroll } from 'vue-composable'
 
 export default defineComponent({
   props: {
@@ -45,5 +61,17 @@ export default defineComponent({
     },
   },
   name: 'DocLayout',
+  setup() {
+    const isMenuVisible = ref(false)
+    const { locked } = useLockScroll('body', { auto: false })
+    const toggleMenu = () => {
+      isMenuVisible.value = !isMenuVisible.value
+      locked.value = !!isMenuVisible.value
+    }
+    return {
+      isMenuVisible,
+      toggleMenu,
+    }
+  },
 })
 </script>
