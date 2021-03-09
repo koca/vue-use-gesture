@@ -6,6 +6,8 @@
   --bg-accent-primary: #60a5fa;
   --bg-inline-code-theme: #2e3440;
   --bg-code-theme: #1c222f;
+  --line-height-code: 1.5;
+  --text-size-code: 15px;
   /* --bg-code-theme: #111827; */
   --border-code-highlight: #0095e6;
 
@@ -46,18 +48,13 @@ body.draggedd {
   background: var(--bg-code-theme);
 }
 
-.shiki-dark {
-  /* background: var(--bg-code-theme) !important; */
-  background: transparent !important;
-  border: 1px solid var(--bg-code-theme) !important;
-}
-
 .prose {
   .code-shiki-mk {
-    font-size: 14px;
+    font-size: var(--text-size-code) !important;
     background: var(--bg-code-theme) !important;
-    /* @apply border border-gray-700; */
+    line-height: var(--line-height-code) !important;
   }
+
   h1 + p {
     @apply text-xl;
   }
@@ -278,4 +275,176 @@ h6:focus .header-anchor {
   opacity: 1;
 }
 
-/* #anchor */
+/* prism */
+
+.prose {
+  /* prism */
+  /* Line highlighting */
+  div[class*='language-'] {
+    position: relative;
+    font-size: var(--text-size-code);
+    line-height: var(--line-height-code) !important;
+    background-color: var(--bg-code-theme);
+    overflow-x: auto;
+    line-height: 1.5;
+  }
+  [class*='language-'] pre,
+  [class*='language-'] code {
+    text-align: left;
+    white-space: pre;
+    word-spacing: normal;
+    word-break: normal;
+    word-wrap: normal;
+    -moz-tab-size: 4;
+    -o-tab-size: 4;
+    tab-size: 4;
+    -webkit-hyphens: none;
+    -moz-hyphens: none;
+    -ms-hyphens: none;
+    hyphens: none;
+  }
+
+  [class*='language-'] pre {
+    position: relative;
+    z-index: 1;
+    margin: 0;
+    padding: 1.25rem 1.5rem;
+    background: transparent;
+    overflow-x: auto;
+  }
+
+  .highlight-lines {
+    padding: 1.25rem 0;
+    margin-top: 2px;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    line-height: inherit;
+    font-family: inherit;
+    font-size: inherit;
+    user-select: none;
+    pointer-events: none;
+    overflow: hidden;
+    z-index: 2;
+  }
+
+  .highlight-lines .highlighted {
+    /* background-color: rgba(255,255,255,.03); */
+    border-left: 3px solid var(--border-code-highlight);
+  }
+  .highlight-lines .dim {
+  }
+
+  [class*='language-'] pre,
+  [class*='language-'] code {
+    text-align: left;
+    white-space: pre;
+    word-spacing: normal;
+    word-break: normal;
+    word-wrap: normal;
+    -moz-tab-size: 4;
+    -o-tab-size: 4;
+    tab-size: 4;
+    -webkit-hyphens: none;
+    -moz-hyphens: none;
+    -ms-hyphens: none;
+    hyphens: none;
+  }
+
+  [class*='language-'] pre {
+    position: relative;
+    z-index: 1;
+    margin: 0;
+    padding: 1.25rem 1.5rem;
+    background: transparent;
+    overflow-x: auto;
+  }
+
+  [class*='language-'] code {
+    padding: 0;
+    color: #eee;
+  }
+}
+
+/**
+ * prism.js tomorrow night eighties for JavaScript, CoffeeScript, CSS and HTML.
+ * Based on https://github.com/chriskempson/tomorrow-theme
+ *
+ * @author Rose Pritchard
+ */
+.token.comment,
+.token.block-comment,
+.token.prolog,
+.token.doctype,
+.token.cdata {
+  color: #999;
+}
+
+.token.punctuation {
+  color: #ccc;
+}
+
+.token.tag,
+.token.attr-name,
+.token.namespace,
+.token.deleted {
+  color: #e2777a;
+}
+
+.token.function-name {
+  color: #6196cc;
+}
+
+.token.boolean,
+.token.number,
+.token.function {
+  color: #f08d49;
+}
+
+.token.property,
+.token.class-name,
+.token.constant,
+.token.symbol {
+  color: #f8c555;
+}
+
+.token.selector,
+.token.important,
+.token.atrule,
+.token.keyword,
+.token.builtin {
+  color: #cc99cd;
+}
+
+.token.string,
+.token.char,
+.token.attr-value,
+.token.regex,
+.token.variable {
+  color: #7ec699;
+}
+
+.token.operator,
+.token.entity,
+.token.url {
+  color: #67cdcc;
+}
+
+.token.important,
+.token.bold {
+  font-weight: bold;
+}
+
+.token.italic {
+  font-style: italic;
+}
+
+.token.entity {
+  cursor: help;
+}
+
+.token.inserted {
+  color: green;
+}

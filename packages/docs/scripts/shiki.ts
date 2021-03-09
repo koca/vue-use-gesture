@@ -2,8 +2,8 @@ import type MarkdownIt from 'markdown-it'
 import deasync from 'deasync'
 import { Theme } from 'shiki-themes'
 import { ShikiRenderer } from './renderer'
-import { escapeHtml } from 'markdown-it/lib/common/utils'
 import MultiRange from 'multi-integer-range'
+import { unescapeAll, escapeHtml } from 'markdown-it/lib/common/utils'
 
 export interface Options {
   theme?: Theme
@@ -16,7 +16,7 @@ async function boot(theme: Theme = 'nord') {
   return renderer
 }
 
-const MarkdownItShiki: MarkdownIt.PluginWithOptions<Options> = (markdownit, options = {}) => {
+export const shikiPlugin: MarkdownIt.PluginWithOptions<Options> = (markdownit, options = {}) => {
   let _highlighter: any = undefined!
 
   const { timeout = 10_000 } = options
@@ -24,6 +24,27 @@ const MarkdownItShiki: MarkdownIt.PluginWithOptions<Options> = (markdownit, opti
   boot().then(function (h) {
     _highlighter = h
   })
+
+  // remove `pre` and `code` wrapper from markdown-it => https://github.com/markdown-it/markdown-it/issues/269#issuecomment-506199293
+  markdownit.renderer.rules.fence = function (tokens, idx, options, _env, _slf) {
+    const token = tokens[idx]
+    const info = token.info ? unescapeAll(token.info).trim() : ''
+    let langName = ''
+    let suffix = ''
+    let highlighted
+
+    if (info) {
+      ;[langName, suffix] = info.split(/\s+/g) // `js {1,2}` => [`js`, `{1,2}`]
+    }
+
+    if (options.highlight) {
+      highlighted = options.highlight(token.content, langName, suffix)
+    } else {
+      highlighted = escapeHtml(token.content)
+    }
+
+    return highlighted + '\n'
+  }
 
   /**
    * @param info the highlighting range text. example: `js {1-3}` => `{1-3}` is the info. see `./markdown.ts`
@@ -59,5 +80,3 @@ const MarkdownItShiki: MarkdownIt.PluginWithOptions<Options> = (markdownit, opti
     }
   }
 }
-
-export default MarkdownItShiki
