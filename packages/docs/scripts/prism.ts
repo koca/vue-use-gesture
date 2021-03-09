@@ -17,8 +17,10 @@ export const preWrapperPlugin = (md: MarkdownIt) => {
 // required to make embedded highlighting work...
 loadLanguages(['markup', 'css', 'javascript'])
 
-function wrap(code: string, _lang: string, hasHighlights: boolean): string {
-  code = escapeHtml(code)
+function wrap(code: string, lang: string, hasHighlights: boolean): string {
+  if (lang === 'text') {
+    code = escapeHtml(code)
+  }
   return `<pre v-pre class="code-shiki-mk ${hasHighlights ? 'has-highlight' : ''}"><code>${code}</code></pre>`
 }
 
@@ -49,7 +51,7 @@ export const highlight = (str: string, lang: string, attrs: string) => {
     }
   }
   if (prism.languages[lang]) {
-    const code = prism.highlight(str, prism.languages[lang], lang)
+    const code = escapeHtml(prism.highlight(str, prism.languages[lang], lang))
     return wrap(code, rawLang, hasHighlights)
   }
   return wrap(str, 'text', hasHighlights)
@@ -77,9 +79,7 @@ export const highlightLinePlugin = (md: MarkdownIt) => {
       .split(',')
       .map((v) => v.split('-').map((v) => parseInt(v, 10)))
 
-    const code = options.highlight
-      ? escapeHtml(options.highlight(token.content, langName, `${lineNumbers.length}`))
-      : escapeHtml(token.content)
+    const code = options.highlight ? options.highlight(token.content, langName, `${lineNumbers.length}`) : token.content
 
     const rawCode = code.replace(wrapperRE, '')
     const highlightLinesCode = rawCode
