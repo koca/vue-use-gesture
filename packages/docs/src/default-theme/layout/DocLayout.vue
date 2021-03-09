@@ -17,7 +17,7 @@
           <svg width="24" height="24" fill="none" class="absolute top-1/2 left-1/2 -mt-3 -ml-3 transition duration-300 transform opacity-0 scale-80"><path d="M6 18L18 6M6 6l12 12" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path></svg>
         </button>
         <div
-          :class="`sidebar fixed z-91 inset-0 flex-none h-full w-full lg:static lg:h-auto lg:overflow-y-visible lg:pt-0 lg:w-64 lg:block bg-gray-900 p-4 ${
+          :class="`sidebar fixed z-91 sm:z-40 inset-0 flex-none h-full w-full lg:static lg:h-auto lg:overflow-y-visible p-4 lg:p-0 lg:pt-0 lg:w-64 lg:block bg-gray-900 ${
             isMenuVisible ? 'mt-8 lg:mt-0' : 'hidden'
           }`"
         >

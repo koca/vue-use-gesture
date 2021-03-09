@@ -3,7 +3,15 @@
   --bg-example-header: rgb(0, 18, 39);
   --z-overlay: 41;
   --z-example: 50;
-  --z-drag: 90;
+  --z-drag: 92;
+}
+
+/* for the sidebar */
+@screen sm {
+  :root {
+    --z-overlay: 90;
+    --z-example: 91;
+  }
 }
 
 .example {
