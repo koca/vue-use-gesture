@@ -12,6 +12,7 @@ export default defineConfig({
   resolve: {
     alias: {
       '@': `${path.resolve(__dirname, 'src')}`,
+      'vue-composable': 'vue-composable/dist/vue-composable.cjs.prod.js',
     },
   },
 

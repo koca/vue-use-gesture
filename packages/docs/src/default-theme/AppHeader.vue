@@ -1,5 +1,5 @@
 <template>
-  <header class="bg-gray-900 border-b border-gray-600 sticky top-0 z-60">
+  <header class="bg-gray-900 border-b border-gray-600 sticky top-0 z-92">
     <div class="flex h-14 max-w-7xl mx-auto w-full items-center px-4">
       <div>
         <a href="/" class="sm:text-xl"><VueUseGesture></VueUseGesture></a>
