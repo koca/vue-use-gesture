@@ -98,7 +98,7 @@ The example above makes a `div` draggable so that it follows your mouse on drag,
 
 ## Thanks
 
-> This library is a port of [React UseGesture](https://github.com/pmndrs/react-use-gesture). Thanks [Polmandres](https://twitter.com/pmndrs) 🙏
+> This library is a port of [React UseGesture](https://github.com/pmndrs/react-use-gesture). Thanks [Poimandres](https://twitter.com/pmndrs) 🙏
 
 ## License
 
