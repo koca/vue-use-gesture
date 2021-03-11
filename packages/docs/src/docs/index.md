@@ -13,7 +13,7 @@ tags:
 
 With the data you receive, it becomes easy to set up complex gestures like dragging and pinching with a few lines of code. You can use this library stand-alone, but to make the most of it you should combine it with an animation library like [vue-use-spring](https://github.com/posva/vue-use-spring).
 
-> This library is a port of [React UseGesture](https://github.com/pmndrs/react-use-gesture). Thanks [Polmandres](https://twitter.com/pmndrs) 🙏
+> This library is a port of [React UseGesture](https://github.com/pmndrs/react-use-gesture). Thanks [Poimandres](https://twitter.com/pmndrs) 🙏
 
 ## Installation
 
