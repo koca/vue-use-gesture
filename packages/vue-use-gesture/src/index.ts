@@ -11,3 +11,5 @@ export { useGesture } from './hooks/useGesture'
 
 export * from './useSpring/presets'
 export { useSpring } from './useSpring/motion'
+
+export * from './types';
